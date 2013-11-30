@@ -10,10 +10,6 @@ import java.io.FileNotFoundException;
  */
 public class MyFileNotFoundException implements MyException {
 
-    private FileInputStream fis1 = null;
-
-    private String fileName = "foo.bar";
-
     /**
      * Demo
      */
@@ -22,9 +18,8 @@ public class MyFileNotFoundException implements MyException {
 
         System.out.printf("\n%s", "Starting " + MyFileNotFoundException.class.getName());
 
-        // get file input stream 1
         try {
-            fis1 = getInputStream(fileName);
+            FileInputStream fis1 = getInputStream("foo.bar");
         } catch (FileNotFoundException ex) {
             System.out.printf("\n%s", "FileNotFoundException caught");
         } catch (Exception any) {
